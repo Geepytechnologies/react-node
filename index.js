@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("frontend/dist"));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("frontend/dist"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("frontend/dist"));
+// }
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
@@ -23,3 +23,5 @@ app.get("/hello", (req, res) => {
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server is running");
 });
+
+module.exports = app;
