@@ -15,7 +15,7 @@ app.use(express.static("frontend/dist"));
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/frontend/dist", "index.html"));
 });
-// const filepath = path.join(__dirname, "frontend/dist", "index.html");
+// const filepath = path.resolve(__dirname + "/frontend/dist", "index.html");
 // console.log(filepath);
 
 // app.get("/", (req, res) => {
